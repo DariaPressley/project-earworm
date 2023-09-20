@@ -33,4 +33,7 @@ Genius Song Lyrics API - Lyrics and Cover Art
     - album art
     - integrate APIs
     - test components
-    
+
+## Project Board
+
+https://github.com/users/DariaPressley/projects/1

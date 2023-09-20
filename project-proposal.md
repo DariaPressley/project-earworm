@@ -28,7 +28,7 @@ Genius Song Lyrics API - Lyrics and Cover Art
 - HTML page
 - CSS page
 - JavaScript
-    - sumbit/modal/search function
+    - modal/search function
     - drop down menu to select languages
     - album art
     - integrate APIs

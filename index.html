@@ -1,13 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project Earworm</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-<body>
-    
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to Earworm!</h1>
+      <h2>
+        Listen to your favorite foriegn music and read the translated lyrics!
+      </h2>
+    </header>
+
+    <div class="container text-center">
+      <div class="row row-cols-1"></div>
+
+      <div class="col">
+        <!-- Vertically centered modal -->
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Modal title</h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label"
+                      >Song:</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="formGroupExampleInput"
+                      placeholder="Enter Artists Name Here"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label"
+                      >Artist:</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="formGroupExampleInput2"
+                      placeholder="Enter Song Title Here"
+                    />
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button type="button" class="btn btn-primary">
+                    Search for Lyrics!
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <select class="form-select" aria-label="Default select example">
+            <option selected>I am listening to a song in:</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+        <div class="col">
+          <select class="form-select" aria-label="Default select example">
+            <option selected>I want to read the lyrics in:</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+        <div class="col">Column</div>
+        <div class="col">Column</div>
+      </div>
+    </div>
+
     <script src="./assets/js/script.js"></script>
-</body>
+  </body>
 </html>

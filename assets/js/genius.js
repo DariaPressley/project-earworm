@@ -9,8 +9,17 @@
 //   searchButton.addEventListener('search', getApi);
 
 
-var artist = document.getElementById ('#modal-artist-input').value;
-var title = document.getElementById ('#modal-song-input').value;
+var artist = document.getElementById('modal-artist-input');
+var title = document.getElementById ('modal-song-input').value;
+var saveArtist = document.getElementById ("artist-submit");
+var saveSong = document.getElementById ("song-submit");
+var artistArea = document.getElementById ("find-artist-textarea")
+
+saveArtist.addEventListener ('click', function (event) {
+  event.preventDefault(); 
+  artistArea.textContent=artist.value
+    
+  });
 
 var id;
 

@@ -26,11 +26,11 @@
             <div class="card-body" id="find-lyrics-body">
               <p class="card-text">
                 Please enter the song name with the corresponding button
-                <textarea id="find-song-textarea"></textarea>
+                <h4 id="find-song-textarea" readonly></h4>
                 <button type="button" class="btn btn-primary btn-lg" id="song-name-button" data-bs-toggle="modal" data-bs-target="#song-modal">Song Name</button>
               <p>
                 Please enter the artists name with the corresponding button
-                <textarea id="find-artist-textarea" readonly></textarea>
+                <h4 id="find-artist-textarea" readonly></h4>
                 <button type="button" class="btn btn-primary btn-lg" id="artist-name-button" data-bs-toggle="modal" data-bs-target="#artist-modal">Artist Name</button></p>  
               </p>
             </div>
@@ -55,7 +55,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <input class="btn btn-primary btn-lg" id="song-submit" type="submit" value="Submit">
+                  <input class="btn btn-primary btn-lg" id="song-submit" type="submit" data-bs-dismiss="modal" value="Submit">
                 </div>
               </div>
             </div>
@@ -77,7 +77,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <input class="btn btn-primary btn-lg" id="artist-submit" type="submit" value="Submit" data-bs-dismiss="modal">
+                  <input class="btn btn-primary btn-lg" id="artist-submit" type="submit" data-bs-dismiss="modal" value="Submit">
                 </div>
               </div>
             </div>
@@ -95,17 +95,219 @@
                   Please enter what language the song lyrics are in:
                 <p><select class="form-select" id="language-song-lyrics-dropdown" aria-label="Default select example">
                   <option selected>I am listening to a song in:</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
+                  <option value="1">Afrikaans</option>
+                  <option value="2">Albanian</option>
+                  <option value="3">Amharic</option>
+                  <option value="4">Arabic</option>
+                  <option value="5">Armenian</option>
+                  <option value="6">Azerbaijani</option>
+                  <option value="7">Basque</option>
+                  <option value="8">Belarusian</option>
+                  <option value="9">Bengali</option>
+                  <option value="10">Bosnian</option>
+                  <option value="11">Bulgarian</option>
+                  <option value="12">Catalan</option>
+                  <option value="13">Cebuano</option>
+                  <option value="14">Chinese (Simplified)</option>
+                  <option value="15">Chinese (Traditional)</option>
+                  <option value="16">Corsican</option>
+                  <option value="17">Croatian</option>
+                  <option value="18">Czech</option>
+                  <option value="19">Danish</option>
+                  <option value="20">Dutch</option>
+                  <option value="21">English</option>
+                  <option value="22">Esperanto</option>
+                  <option value="23">Estonian</option>
+                  <option value="24">Finnish</option>
+                  <option value="25">French</option>
+                  <option value="26">Frisian</option>
+                  <option value="27">Galician</option>
+                  <option value="28">Georgian</option>
+                  <option value="29">German</option>
+                  <option value="30">Greek</option>
+                  <option value="31">Gujarati</option>
+                  <option value="32">Haitian Creole</option>
+                  <option value="33">Hausa</option>
+                  <option value="34">Hawaiian</option>
+                  <option value="35">Hebrew</option>
+                  <option value="36">Hindi</option>
+                  <option value="37">Hmong</option>
+                  <option value="38">Hungarian</option>
+                  <option value="39">Icelandic</option>
+                  <option value="40">Igbo</option>
+                  <option value="41">Indonesian</option>
+                  <option value="42">Irish</option>
+                  <option value="43">Italian</option>
+                  <option value="44">Japanese</option>
+                  <option value="45">Javanese</option>
+                  <option value="46">Kannada</option>
+                  <option value="47">Kazakh</option>
+                  <option value="48">Khmer</option>
+                  <option value="49">Korean</option>
+                  <option value="50">Kurdish</option>
+                  <option value="51">Kyrgyz</option>
+                  <option value="52">Lao</option>
+                  <option value="53">Latin</option>
+                  <option value="54">Latvian</option>
+                  <option value="55">Lithuanian</option>
+                  <option value="56">Luxembourgish</option>
+                  <option value="57">Macedonian</option>
+                  <option value="58">Malagasy</option>
+                  <option value="59">Malay</option>
+                  <option value="60">Malayalam</option>
+                  <option value="61">Maltese</option>
+                  <option value="62">Maori</option>
+                  <option value="63">Marathi</option>
+                  <option value="64">Mongolian</option>
+                  <option value="65">Myanmar (Burmese)</option>
+                  <option value="66">Nepali</option>
+                  <option value="67">Norwegian</option>
+                  <option value="68">Nyanja (Chichewa)</option>
+                  <option value="69">Pashto</option>
+                  <option value="70">Persian</option>
+                  <option value="71">Polish</option>
+                  <option value="72">Portuguese (Portugal, Brazil)</option>
+                  <option value="73">Punjabi</option>
+                  <option value="74">Romanian</option>
+                  <option value="75">Russian</option>
+                  <option value="76">Samoan</option>
+                  <option value="77">Scots Gaelic</option>
+                  <option value="78">Serbian</option>
+                  <option value="79">Sesotho</option>
+                  <option value="80">Shona</option>
+                  <option value="81">Sindhi</option>
+                  <option value="82">Sinhala (Sinhalese)</option>
+                  <option value="83">Slovak</option>
+                  <option value="84">Slovenian</option>
+                  <option value="85">Somali</option>
+                  <option value="86">Spanish</option>
+                  <option value="87">Sundanese</option>
+                  <option value="88">Swahili </option>
+                  <option value="89">Swedish</option>
+                  <option value="90">Tagalog (Filipino)</option>
+                  <option value="91">Tajik</option>
+                  <option value="92">Tamil</option>
+                  <option value="93">Telugu</option>
+                  <option value="94">Thai</option>
+                  <option value="95">Turkish</option>
+                  <option value="96">Ukrainian</option>
+                  <option value="97">Urdu</option>
+                  <option value="98">Uzbek</option>
+                  <option value="99">Vietnamese</option>
+                  <option value="100">Welsh</option>
+                  <option value="101">Xhosa</option>
+                  <option value="102">Yiddish</option>
+                  <option value="103">Yoruba</option>
+                  <option value="104">Zulu</option>
                 </select>
                 </p>
                 <p id="language-translate-lyrics">Please select which language you would like to translate the lyrics into:</p>
                 <p><select class="form-select" id="language-translate-lyrics-dropdown" aria-label="Default select example">
-                  <option selected>I want to read the lyrics in:</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
+                  <option selected>I am listening to a song in:</option>
+                  <option value="1">Afrikaans</option>
+                  <option value="2">Albanian</option>
+                  <option value="3">Amharic</option>
+                  <option value="4">Arabic</option>
+                  <option value="5">Armenian</option>
+                  <option value="6">Azerbaijani</option>
+                  <option value="7">Basque</option>
+                  <option value="8">Belarusian</option>
+                  <option value="9">Bengali</option>
+                  <option value="10">Bosnian</option>
+                  <option value="11">Bulgarian</option>
+                  <option value="12">Catalan</option>
+                  <option value="13">Cebuano</option>
+                  <option value="14">Chinese (Simplified)</option>
+                  <option value="15">Chinese (Traditional)</option>
+                  <option value="16">Corsican</option>
+                  <option value="17">Croatian</option>
+                  <option value="18">Czech</option>
+                  <option value="19">Danish</option>
+                  <option value="20">Dutch</option>
+                  <option value="21">English</option>
+                  <option value="22">Esperanto</option>
+                  <option value="23">Estonian</option>
+                  <option value="24">Finnish</option>
+                  <option value="25">French</option>
+                  <option value="26">Frisian</option>
+                  <option value="27">Galician</option>
+                  <option value="28">Georgian</option>
+                  <option value="29">German</option>
+                  <option value="30">Greek</option>
+                  <option value="31">Gujarati</option>
+                  <option value="32">Haitian Creole</option>
+                  <option value="33">Hausa</option>
+                  <option value="34">Hawaiian</option>
+                  <option value="35">Hebrew</option>
+                  <option value="36">Hindi</option>
+                  <option value="37">Hmong</option>
+                  <option value="38">Hungarian</option>
+                  <option value="39">Icelandic</option>
+                  <option value="40">Igbo</option>
+                  <option value="41">Indonesian</option>
+                  <option value="42">Irish</option>
+                  <option value="43">Italian</option>
+                  <option value="44">Japanese</option>
+                  <option value="45">Javanese</option>
+                  <option value="46">Kannada</option>
+                  <option value="47">Kazakh</option>
+                  <option value="48">Khmer</option>
+                  <option value="49">Korean</option>
+                  <option value="50">Kurdish</option>
+                  <option value="51">Kyrgyz</option>
+                  <option value="52">Lao</option>
+                  <option value="53">Latin</option>
+                  <option value="54">Latvian</option>
+                  <option value="55">Lithuanian</option>
+                  <option value="56">Luxembourgish</option>
+                  <option value="57">Macedonian</option>
+                  <option value="58">Malagasy</option>
+                  <option value="59">Malay</option>
+                  <option value="60">Malayalam</option>
+                  <option value="61">Maltese</option>
+                  <option value="62">Maori</option>
+                  <option value="63">Marathi</option>
+                  <option value="64">Mongolian</option>
+                  <option value="65">Myanmar (Burmese)</option>
+                  <option value="66">Nepali</option>
+                  <option value="67">Norwegian</option>
+                  <option value="68">Nyanja (Chichewa)</option>
+                  <option value="69">Pashto</option>
+                  <option value="70">Persian</option>
+                  <option value="71">Polish</option>
+                  <option value="72">Portuguese (Portugal, Brazil)</option>
+                  <option value="73">Punjabi</option>
+                  <option value="74">Romanian</option>
+                  <option value="75">Russian</option>
+                  <option value="76">Samoan</option>
+                  <option value="77">Scots Gaelic</option>
+                  <option value="78">Serbian</option>
+                  <option value="79">Sesotho</option>
+                  <option value="80">Shona</option>
+                  <option value="81">Sindhi</option>
+                  <option value="82">Sinhala (Sinhalese)</option>
+                  <option value="83">Slovak</option>
+                  <option value="84">Slovenian</option>
+                  <option value="85">Somali</option>
+                  <option value="86">Spanish</option>
+                  <option value="87">Sundanese</option>
+                  <option value="88">Swahili </option>
+                  <option value="89">Swedish</option>
+                  <option value="90">Tagalog (Filipino)</option>
+                  <option value="91">Tajik</option>
+                  <option value="92">Tamil</option>
+                  <option value="93">Telugu</option>
+                  <option value="94">Thai</option>
+                  <option value="95">Turkish</option>
+                  <option value="96">Ukrainian</option>
+                  <option value="97">Urdu</option>
+                  <option value="98">Uzbek</option>
+                  <option value="99">Vietnamese</option>
+                  <option value="100">Welsh</option>
+                  <option value="101">Xhosa</option>
+                  <option value="102">Yiddish</option>
+                  <option value="103">Yoruba</option>
+                  <option value="104">Zulu</option>
                 </select>    
                 </p>
               </div>

@@ -1,7 +1,7 @@
 const myModal = document.getElementById('myModal')
 const myInput = document.getElementById('myInput')
 
-const geniusLyrics = "English is hard but detectably so" // placeholder for genius lyrics we get from genius API
+const geniusLyrics = "This is english I am typing in" // placeholder for genius lyrics we get from genius API
 
 // myModal.addEventListener('shown.bs.modal', () => {
 //   myInput.focus()
@@ -52,9 +52,11 @@ fetch(detecturl, detectoptions)
             })
             .then(result => {
 				for (let i = 0; i < result.data.languages.length; i++) {
-				const availableTranslations = result.data.languages[i].language;
+				const availableTranslations = result.data.languages[1].language;
+				const availableTranslationsEng = result.data.languages[i].name
 				
-                console.log(availableTranslations); // return languages available to translate from
+                console.log(availableTranslations); // return language codes available to translate from
+				console.log(availableTranslationsEng); // returns available translations in English
 				}
 
                 const translateUrl = 'https://google-translate1.p.rapidapi.com/language/translate/v2';
@@ -68,7 +70,7 @@ fetch(detecturl, detectoptions)
                     },
                     body: new URLSearchParams({
                         q: geniusLyrics, // lyrics from genius API
-                        target: "es", // target language we want to change the lyrics to
+                        target: "es", // target language code we want to change the lyrics to
                         source: language // set source language
                     })
                 };

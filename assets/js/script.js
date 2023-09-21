@@ -1,6 +1,34 @@
 const myModal = document.getElementById('myModal')
 const myInput = document.getElementById('myInput')
 
+const url = 'https://genius-song-lyrics1.p.rapidapi.com/search/?q=Travis&per_page=10&page=1';
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '1eb102c1ccmsh8787a73e30281e3p11f25ajsncb90c9ddb7c3',
+		'X-RapidAPI-Host': 'genius-song-lyrics1.p.rapidapi.com'
+	}
+};
+
+fetch(url, options)
+    .then(response => {
+        if(!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(result => {
+		const artistName = result.hits[0].result.primary_artist.name
+		const songTitle = result.hits[0].result.full_title
+		const songImage = result.hits[0]
+		console.log(result.hits[0].result.full_title)
+		
+		
+	})
+    .catch(error => console.error(error));
+
+
+	
 const geniusLyrics = "This is english I am typing in" // placeholder for genius lyrics we get from genius API
 
 // myModal.addEventListener('shown.bs.modal', () => {
@@ -97,3 +125,4 @@ fetch(detecturl, detectoptions)
     .catch(error => {
         console.error(error);
     });
+

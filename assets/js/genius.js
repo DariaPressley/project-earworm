@@ -56,4 +56,19 @@ $.ajax(settings).then(function (response) {
 
 });
 
+const url = 'https://genius-song-lyrics1.p.rapidapi.com/search/multi/?q=shake%20it%20off%20taylor%20swift&per_page=3&page=1';
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '6619f90da8msh59c12f6daf73a82p1a280cjsneb6601c06c64',
+		'X-RapidAPI-Host': 'genius-song-lyrics1.p.rapidapi.com'
+	}
+};
 
+try {
+	const response = await fetch(url, options);
+	const result = await response.text();
+	console.log(result);
+} catch (error) {
+	console.error(error);
+}

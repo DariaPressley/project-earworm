@@ -23,11 +23,15 @@
             <h3 class="card-header">
               Find a songs lyrics!
             </h3>
-            <div class="card-body">
+            <div class="card-body" id="find-lyrics-body">
               <p class="card-text">
-                Please enter the song name and the artists name with the corresponding buttons
-              <p><button type="button" class="btn btn-primary btn-lg">Song Name</button>  
-              <button type="button" class="btn btn-primary btn-lg">Artist Name</button></p>  
+                Please enter the song name with the corresponding button
+                <textarea id="find-song-textarea"></textarea>
+                <button type="button" class="btn btn-primary btn-lg" id="song-name-button" data-bs-toggle="modal" data-bs-target="#song-modal">Song Name</button>
+              <p>
+                Please enter the artists name with the corresponding button
+                <textarea id="find-artist-textarea"></textarea>
+                <button type="button" class="btn btn-primary btn-lg" id="artist-name-button" data-bs-toggle="modal" data-bs-target="#artist-modal">Artist Name</button></p>  
               </p>
             </div>
           </div>
@@ -36,15 +40,40 @@
 
       <div class="col">
         <div class="modal-dialog modal-dialog-centered">
-          <div class="modal" tabindex="-1">
+          <div class="modal" id="song-modal" tabindex="-1">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title">Modal title</h5>
+                  <h5 class="modal-title" id="modal-song-title">Type your song title!</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                  <p>Modal body text goes here.</p>
+                <div class="modal-body" id="song-modal-body">
+                  <p>
+                    <label for="modal-content" class="modal-content-label" id="modal-song-content">Type the title of the song you are looking for here:</label>
+                    <input type="text" class="modal-input" id="modal-song-input" placeholder="Song Title">
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <input class="btn btn-primary btn-lg" type="submit" value="Submit">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal" id="artist-modal" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modal-artist-title">Type your artist name!</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="song-modal-body">
+                  <p>
+                    <label for="modal-content" class="modal-content-label" id="modal-artist-content">Type the name of the Artist you are looking for here:</label>
+                    <input type="text" class="modal-input" id="modal-artist-input" placeholder="Artist Name">
+                  </p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -61,33 +90,28 @@
               <h3 class="card-header">
                 Please choose a Language!
               </h3>
-              <div class="card-body">
-                <p class="card-text">
+              <div class="card-body" id="language-choice">
+                <p class="card-text" id="language-song-lyrics">
                   Please enter what language the song lyrics are in:
-                <p><select class="form-select" aria-label="Default select example">
+                <p><select class="form-select" id="language-song-lyrics-dropdown" aria-label="Default select example">
                   <option selected>I am listening to a song in:</option>
                   <option value="1">One</option>
                   <option value="2">Two</option>
                   <option value="3">Three</option>
                 </select>
-                <p>Please select which language you would like to translate the lyrics into:</p>
-                <select class="form-select" aria-label="Default select example">
+                </p>
+                <p id="language-translate-lyrics">Please select which language you would like to translate the lyrics into:</p>
+                <p><select class="form-select" id="language-translate-lyrics-dropdown" aria-label="Default select example">
                   <option selected>I want to read the lyrics in:</option>
                   <option value="1">One</option>
                   <option value="2">Two</option>
                   <option value="3">Three</option>
                 </select>    
                 </p>
-                </p>
               </div>
             </div>
           </div>
-          
         </div>
-        <div class="col">
-          
-        </div>
-        <div class="col">
             <div class="d-grid gap-2 col-6 col-lg-10">
                 <button class="btn btn-primary" type="button">Translate!</button>
                

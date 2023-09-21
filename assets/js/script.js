@@ -1,3 +1,10 @@
+const myModal = document.getElementById('myModal')
+const myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', () => {
+  myInput.focus()
+})
+
 const url = 'https://google-translate1.p.rapidapi.com/language/translate/v2/detect';
 const options = {
 	method: 'POST',

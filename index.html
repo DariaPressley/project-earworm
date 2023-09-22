@@ -8,29 +8,31 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <header>
-      <h1 class="text-center">Welcome to Earworm!</h1>
+    <header class="container">
+      <h1 class="text-center">Welcome to "Earworm"</h1>
       <h2 class="text-center">
         Listen to your favorite foriegn music and read the translated lyrics!
       </h2>
     </header>
 
-    <div class="container text-center">
+  
+
+    <div class="container2 text-center">
       <div class="row row-cols-1"></div>
       <div class="col">
         <div class="col-12 col-sm-6 col-lg-10 mb-3">
           <div class="card">
             <h3 class="card-header">
-              Find a songs lyrics!
+              Find a song's lyrics!
             </h3>
             <div class="card-body" id="find-lyrics-body">
               <p class="card-text">
-                Please enter the song name with the corresponding button
-                <textarea id="find-song-textarea"></textarea>
+                Artist Name
+                <input id="find-song-textarea"></input>
                 <button type="button" class="btn btn-primary btn-lg" id="song-name-button" data-bs-toggle="modal" data-bs-target="#song-modal">Song Name</button>
               <p>
-                Please enter the artists name with the corresponding button
-                <textarea id="find-artist-textarea"></textarea>
+                Song Title
+                <input id="find-artist-textarea"></input>
                 <button type="button" class="btn btn-primary btn-lg" id="artist-name-button" data-bs-toggle="modal" data-bs-target="#artist-modal">Artist Name</button></p>  
               </p>
             </div>

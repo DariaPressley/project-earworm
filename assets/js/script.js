@@ -19,6 +19,7 @@ fetch(url, options)
         return response.json();
     })
     .then(result => { // Getting all the info we need from whatever the user searched
+        console.log(result)
         const artistName = result.hits[0].result.primary_artist.name; // artist name
         const songTitle = result.hits[0].result.full_title; // song title
         const songImage = result.hits[0].result.song_art_image_url; // song image
@@ -41,6 +42,7 @@ fetch(url, options)
                 return response.json();
             })
             .then(result => {
+                console.log(result)
                 const originalLyrics = result.lyrics.lyrics.body.html; // lyrics generated from genius API
                 console.log(originalLyrics);
 
@@ -87,8 +89,8 @@ fetch(url, options)
                                 return response.json();
                             })
                             .then(result => {
-                                for (let i = 0; i < result.data.languages.length; i++) {
-                                    const availableTranslations = result.data.languages[1].language; 
+                                for (let i = 0; i < result.data.languages.length; i++) { //for loop that iterates through all data languages
+                                    const availableTranslations = result.data.languages[i].language; 
                                     const availableTranslationsEng = result.data.languages[i].name;
                                     
                                     console.log(availableTranslations); // return language codes available to translate from

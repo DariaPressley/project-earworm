@@ -3,7 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family:'Courier New', Courier, monospace;
-   
+
 
 }
 body {
@@ -13,26 +13,28 @@ body {
     background-image: url('https://images.unsplash.com/photo-1518672703296-e3022657f7b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2938&q=80');
     background-repeat: no-repeat;
     background-size: 125% 125%;
-    
+
 }
 
 header {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: navy;
+    color: rgba(0, 0, 0, 0.885);
     background-color: rgba(255, 255, 255, 0.132);
     border-radius: 10px;
-    text-shadow: rgba(255, 255, 255, 0.743) 2px 2px;
+    text-shadow: rgba(255, 255, 255, 0.788) 2px 2px;
 }
 
 header h1 {
     font-weight: bold;
+    font-style: italic;
+    
 }
 
-header h1 span {
-    color: whitesmoke;
-    text-shadow: navy 2px 2px;
-    font-family:'monospace'; 
-    font-weight: bolder;
+header h1 img { 
+    width: 20%;
+    height: 20%;
+    margin-top: -7px;
+   
 }
 
 header h2 {
@@ -42,16 +44,22 @@ header h2 {
 
 .container2 {
     position: relative;
-    left: 130px;
-    
+    left: 110px;
+
 }
 
 .card-body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    
+
 }
 
 .card {
     background:rgba(255, 255, 255, 0.466);
-    
+
 }
+
+.card-header {
+    color: rgba(0, 0, 0, 0.885);
+    font-weight: bolder;
+    text-shadow: white 2px 2px;
+} 

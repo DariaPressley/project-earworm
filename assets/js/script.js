@@ -68,6 +68,7 @@ fetch(url, options)
                         return response.json();
                     })
                     .then(data => {
+                        console.log(data)
                         const language = data.data.detections[0][0].language; // detects the language of the original lyrics
                         console.log(language);
 
@@ -89,7 +90,9 @@ fetch(url, options)
                                 return response.json();
                             })
                             .then(result => {
+                                console.log(result)
                                 for (let i = 0; i < result.data.languages.length; i++) { //for loop that iterates through all data languages
+                                    console.log(result)
                                     const availableTranslations = result.data.languages[i].language; 
                                     const availableTranslationsEng = result.data.languages[i].name;
                                     
@@ -121,6 +124,7 @@ fetch(url, options)
                                         return response.json();
                                     })
                                     .then(result => {
+                                        console.log(result)
                                         const translatedLyrics = result.data.translations[0].translatedText;
                                         console.log(translatedLyrics); // translated lyrics
                                     })

@@ -1,8 +1,31 @@
-// var songEL = document.getElementById('song');
-// var artistEl = document.getElementById('artist');
-// var lyricsEl = document.getElementById ('lyrics');
-// var searchEl = document.getElementById ('search')
+var songEL = document.getElementById('song');
+var artistEl = document.getElementById('artist');
+var lyricsEl = document.getElementById ('lyrics');
+var searchEl = document.getElementById ('search');
 
+var artist = document.getElementById('modal-artist-input');
+var title = document.getElementById ('modal-song-input');
+var saveArtist = document.getElementById ("artist-submit");
+var saveSong = document.getElementById ("song-submit");
+var artistArea = document.getElementById ("find-artist-textarea")
+var songArea = document.getElementById("find-song-textarea")
+
+saveArtist.addEventListener ('click', function (event) {
+  event.preventDefault();
+  artistArea.textContent=artist.value
+  console.log(artist)
+  });
+
+
+saveSong.addEventListener ('click', function (event) {
+    event.preventDefault();
+    songArea.textContent=title.value
+    console.log(artist)
+    });
+
+
+
+// var id;
 // function getApi() {
 //     var requestUrl = 'https://genius-song-lyrics1.p.rapidapi.com/search/multi/?q=%3CREQUIRED%3E&per_page=3&page=1';
 // } 

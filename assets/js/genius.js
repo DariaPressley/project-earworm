@@ -15,20 +15,22 @@ function getSongName () {
 
 function getSourceLang () {
     var sourceLang = localStorage.getItem("sourceLangEng");
-    var sourceLangtext = document.getElementById("language-card-text");
-    sourceLangtext.textContent = sourceLang
+    var langCardText = document.getElementById("language-card-text");
+    langCardText.textContent = "The original lyrics are in " + sourceLang + ".";
 
 }
 
 function getTranslateLang () {
     var translateLang = localStorage.getItem("translateLangEng")
-    var translateLangtext = document.getElementById("language-card-text")
-    translateLangtext.textContent = translateLang
+    var langCardText = $("#language-card-text")
+    var translateLangText = $("<p> I want to translate the lyrics to " + translateLang + ".<p>")
+    langCardText.append(translateLangText)
 }
 
 getArtistName();
 getSongName();
 getSourceLang();
+getTranslateLang();
 
 goBackButton.addEventListener ("click", function() {
     window.location.href = "index.html";
@@ -36,34 +38,38 @@ goBackButton.addEventListener ("click", function() {
 )
 
 
+var artistName = localStorage.getItem("artistName");
+var songName = localStorage.getItem("songName");
 
+// Concatenate the songName and artistName with a space in between
+const searchTerm = songName + " " + artistName;
 
+// Encode the concatenated string for URL
+const encodedSearchTerm = encodeURIComponent(searchTerm); // correctly formats the search term to go in the url
 
+const url = 'https://genius-song-lyrics1.p.rapidapi.com/search/?q=' + encodedSearchTerm + '&per_page=10&page=1'; // Genius API search call
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '1eb102c1ccmsh8787a73e30281e3p11f25ajsncb90c9ddb7c3',
+		'X-RapidAPI-Host': 'genius-song-lyrics1.p.rapidapi.com'
+	}
+};
 
-// const songName = "All of me"; // Replace with user input
-// const url = 'https://genius-song-lyrics1.p.rapidapi.com/search/?q=' + songName + '&per_page=10&page=1'; // Genius API search call
-// const options = {
-// 	method: 'GET',
-// 	headers: {
-// 		'X-RapidAPI-Key': '1eb102c1ccmsh8787a73e30281e3p11f25ajsncb90c9ddb7c3',
-// 		'X-RapidAPI-Host': 'genius-song-lyrics1.p.rapidapi.com'
-// 	}
-// };
-
-// fetch(url, options)
-//     .then(response => {
-//         if (!response.ok) {
-//             throw new Error(`HTTP error! Status: ${response.status}`);
-//         }
-//         return response.json();
-//     })
-//     .then(result => { // Getting all the info we need from whatever the user searched
-//         console.log(result)
-//         const artistName = result.hits[0].result.primary_artist.name; // artist name
-//         const songTitle = result.hits[0].result.full_title; // song title
-//         const songImage = result.hits[0].result.song_art_image_url; // song image
-//         const songId = result.hits[0].result.id; // song id
-
+fetch(url, options)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(result => { // Getting all the info we need from whatever the user searched
+        console.log(result)
+        const artistName = result.hits[0].result.primary_artist.name; // artist name
+        const songTitle = result.hits[0].result.full_title; // song title
+        const songImage = result.hits[0].result.song_art_image_url; // song image
+        const songId = result.hits[0].result.id; // song id
+    })
 //         const url = 'https://genius-song-lyrics1.p.rapidapi.com/song/lyrics/?id=' + songId; // Genius API song lyric call
 //         const options = {
 //             method: 'GET',

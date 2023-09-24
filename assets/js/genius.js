@@ -93,7 +93,15 @@ fetch(searchUrl, searchOptions)
                 console.log(result.lyrics.lyrics.body.html)
                 const originalLyrics = result.lyrics.lyrics.body.html; // lyrics generated from genius API
                 const lyricTextBody = document.getElementById("original-lyrics-text")
-                lyricTextBody.innerHTML = "<p> Source Language <p> " + originalLyrics 
+                // Removing hrefs for the lyrics to make the lyrics cleaner - hrefs wont redirect anyway
+                // Remove href attributes
+                var cleanedLyrics = originalLyrics.replace(/ href="[^"]*"/g, '');  //removing href from lyrics 
+
+                // Remove class attributes
+                cleanedLyrics = cleanedLyrics.replace(/ class="[^"]*"/g, ''); // removing classes from lyrics
+
+                lyricTextBody.innerHTML = "<p>Source Language</p>" + cleanedLyrics;
+
             })
         })
 //                 const detecturl = 'https://google-translate1.p.rapidapi.com/language/translate/v2/detect';  // Detect language call with Translate API

@@ -47,8 +47,8 @@ const searchTerm = songName + " " + artistName;
 // Encode the concatenated string for URL
 const encodedSearchTerm = encodeURIComponent(searchTerm); // correctly formats the search term to go in the url
 
-const url = 'https://genius-song-lyrics1.p.rapidapi.com/search/?q=' + encodedSearchTerm + '&per_page=10&page=1'; // Genius API search call
-const options = {
+const searchUrl = 'https://genius-song-lyrics1.p.rapidapi.com/search/?q=' + encodedSearchTerm + '&per_page=10&page=1'; // Genius API search call
+const searchOptions = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Key': '1eb102c1ccmsh8787a73e30281e3p11f25ajsncb90c9ddb7c3',
@@ -56,7 +56,7 @@ const options = {
 	}
 };
 
-fetch(url, options)
+fetch(searchUrl, searchOptions)
     .then(response => {
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -66,31 +66,36 @@ fetch(url, options)
     .then(result => { // Getting all the info we need from whatever the user searched
         console.log(result)
         const artistName = result.hits[0].result.primary_artist.name; // artist name
+        document.getElementById("artist-card-text").textContent = artistName
         const songTitle = result.hits[0].result.full_title; // song title
+        document.getElementById("song-title-text").textContent = songTitle
         const songImage = result.hits[0].result.song_art_image_url; // song image
+        $(".card-img").attr("src", songImage) // append image on page
         const songId = result.hits[0].result.id; // song id
-    })
-//         const url = 'https://genius-song-lyrics1.p.rapidapi.com/song/lyrics/?id=' + songId; // Genius API song lyric call
-//         const options = {
-//             method: 'GET',
-//             headers: {
-//                 'X-RapidAPI-Key': '1eb102c1ccmsh8787a73e30281e3p11f25ajsncb90c9ddb7c3',
-//                 'X-RapidAPI-Host': 'genius-song-lyrics1.p.rapidapi.com'
-//             }
-//         };
 
-//         fetch(url, options)
-//             .then(response => {
-//                 if (!response.ok) {
-//                     throw new Error(`HTTP error! Status: ${response.status}`);
-//                 }
-//                 return response.json();
-//             })
-//             .then(result => {
-//                 console.log(result)
-//                 const originalLyrics = result.lyrics.lyrics.body.html; // lyrics generated from genius API
-//                 console.log(originalLyrics);
+        const lyricUrl = 'https://genius-song-lyrics1.p.rapidapi.com/song/lyrics/?id=' + songId; // Genius API song lyric call
+        const lyricOptions = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '1eb102c1ccmsh8787a73e30281e3p11f25ajsncb90c9ddb7c3',
+                'X-RapidAPI-Host': 'genius-song-lyrics1.p.rapidapi.com'
+            }
+        };
 
+        fetch(lyricUrl, lyricOptions)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(result => {
+                console.log(result.lyrics.lyrics.body.html)
+                const originalLyrics = result.lyrics.lyrics.body.html; // lyrics generated from genius API
+                const lyricTextBody = document.getElementById("original-lyrics-text")
+                lyricTextBody.innerHTML = "<p> Source Language <p> " + originalLyrics 
+            })
+        })
 //                 const detecturl = 'https://google-translate1.p.rapidapi.com/language/translate/v2/detect';  // Detect language call with Translate API
 //                 const detectoptions = {
 //                     method: 'POST',

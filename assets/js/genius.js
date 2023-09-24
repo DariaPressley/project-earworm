@@ -30,6 +30,10 @@ getArtistName();
 getSongName();
 getSourceLang();
 
+goBackButton.addEventListener ("click", function() {
+    window.location.href = "index.html";
+}
+)
 
 
 

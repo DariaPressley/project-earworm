@@ -7,10 +7,12 @@ var artist = document.getElementById('modal-artist-input');
 var title = document.getElementById ('modal-song-input');
 var saveArtist = document.getElementById ("artist-submit");
 var saveSong = document.getElementById ("song-submit");
-var artistArea = document.getElementById ("find-artist-textarea")
-var songArea = document.getElementById("find-song-textarea")
-var sourceDropdown = document.getElementById("language-song-lyrics-dropdown")
-var translateDropdown = document.getElementById("language-translate-lyrics-dropdown")
+var artistArea = document.getElementById ("find-artist-textarea");
+var songArea = document.getElementById("find-song-textarea");
+var sourceDropdown = document.getElementById("language-song-lyrics-dropdown");
+var translateDropdown = document.getElementById("language-translate-lyrics-dropdown");
+var translateButton = document.getElementById ("translateButton");
+var goBackButton = document.getElementById ("goBackButton");
 
 saveArtist.addEventListener ('click', function (event) {
   event.preventDefault();
@@ -48,9 +50,15 @@ translateDropdown.addEventListener ("change", function () {
     console.log(translateLanguageEng)
 })
 
+translateButton.addEventListener ("click", function() {
+    window.location.href = "landingPage.html";
+    }
+)
+
 
 var artistName =  document.getElementById("artist-card-text")
 
 const myModal = document.getElementById('myModal');
 const myInput = document.getElementById('myInput');
+
 

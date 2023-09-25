@@ -50,6 +50,7 @@ translateDropdown.addEventListener ("change", function () {
     console.log(translateLanguageEng)
 })
 
+
 translateButton.addEventListener ("click", function() {
     var sourceLanguage = sourceDropdown.value;
     var translateLanguage = translateDropdown.value;

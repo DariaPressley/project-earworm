@@ -15,12 +15,12 @@ var translateButton = document.getElementById ("translateButton");
 var goBackButton = document.getElementById ("goBackButton");
 
 saveArtist.addEventListener ('click', function (event) {
-  event.preventDefault();
-  var artistName = artistArea.textContent=artist.value
-  console.log(artist)
-  localStorage.setItem("artistName", artistName)
-  artistName =  document.getElementById("artist-card-text")
-  });
+    event.preventDefault();
+    var artistName = artistArea.textContent = artist.value
+    console.log(artist)
+    localStorage.setItem("artistName", artistName)
+    artistName =  document.getElementById("artist-card-text")
+    });
 
 
 saveSong.addEventListener ('click', function (event) {

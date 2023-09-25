@@ -1,0 +1,80 @@
+#album-background{
+    padding: 18%;
+    background-image: url(/assets/images/soundtrap-5Wj_tk8_Ens-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#album-body{
+    width: 400%;
+    margin-top: -400px;
+    margin-right: 45%;
+    padding-top: 15%;
+}
+
+#artist-card-overall{
+    margin-bottom: 20px;
+    width: 35%;
+    height: auto;
+    opacity: 60%;
+}
+
+#song-card-overall{
+    margin-bottom: 20px;
+    width: 35%;
+    height: auto;
+    opacity: 60%;
+}
+
+#language-card-overall{
+    margin-bottom: 20px;
+    width: 35%;
+    height: auto;
+    opacity: 60%;
+}
+
+
+.card-img-top{
+    width: 100%;
+    height: 50px;
+
+}
+
+.card-img{
+    width: 585px;
+    height: 600px;
+}
+
+
+#album-art{
+    margin-right: -500px;
+    margin-top: -700px;
+    opacity: 80%;
+
+}
+
+#album-art-overall{
+    padding: 5px;
+    width: 600px;
+    height: 600px;
+}
+
+#translate-1{
+    height: auto;
+    margin-top: -12%;
+}
+
+#translate-2{
+    height: auto;
+    margin-top: -12%;
+}
+
+#translate-1-card-body{
+    background-color: gray;
+    height: auto;
+}
+
+#translate-2-card-body{
+    background-color: gray;
+    height: auto;
+}

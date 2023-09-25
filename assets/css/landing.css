@@ -17,21 +17,22 @@
     margin-bottom: 20px;
     width: 35%;
     height: auto;
-    opacity: 60%;
+    opacity: 80%;
+    
 }
 
 #song-card-overall{
     margin-bottom: 20px;
     width: 35%;
     height: auto;
-    opacity: 60%;
+    opacity: 80%;
 }
 
 #language-card-overall{
     margin-bottom: 20px;
     width: 35%;
     height: auto;
-    opacity: 60%;
+    opacity: 80%;
 }
 
 .card-img-top{
@@ -82,4 +83,70 @@
 #translate-2-card-body{
     background-color: gray;
     height: auto;
+}
+
+@media only screen and (max-width: 768px){
+     
+    #artist-card-overall{
+        position: relative;
+        margin-bottom: 20px;
+        width: 75%;
+        height: auto;
+        opacity: 80%;
+        left: 25px;
+        text-align: center;
+    }
+    #song-card-overall{
+        position: relative;
+        margin-bottom: 20px;
+        width: 75%;
+        height: auto;
+        opacity: 80%;
+        left: 25px;
+        text-align: center;
+    }
+    
+    #language-card-overall{
+        position: relative;
+        margin-bottom: 20px;
+        width: 75%;
+        height: auto;
+        opacity: 80%;
+        left:25px;
+        text-align: center;
+    }
+
+    #album-art{
+        position: relative;
+        margin-top: -200px;
+        opacity: 80%;
+        max-width: 40%;
+        max-height: 30%;
+        left: 100px;
+        border-style: none;
+    }
+
+    #album-art-overall{
+        /* margin-top: 200px;
+        margin-right: 200px;
+        padding: 5px;
+        width: 600px;
+        height: 600px; */
+        border-style: none;
+    }
+    #translate-1{
+        position: relative;
+        height: auto;
+        margin-top: -12%;
+        padding-left: 50px;
+        left: -150px;
+    }
+    
+    #translate-2{
+        position: relative;
+        height: auto;
+        margin-top: -12%;
+        padding-right: 50px;
+        left: -160px;
+    }
 }

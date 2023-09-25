@@ -1,5 +1,6 @@
 var artistName = localStorage.getItem("artistName");
 var artistText = document.getElementById("artist-card-text")
+var goBackButton = document.getElementById ("goBackButton");
 
 
 function getArtistName () {

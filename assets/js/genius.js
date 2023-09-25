@@ -37,7 +37,8 @@ goBackButton.addEventListener ("click", function() {
 }
 )
 
-
+var sourceLangInput = localStorage.getItem('sourceLang')
+var translateLangInput = localStorage.getItem('translateLang')
 var artistName = localStorage.getItem("artistName");
 var songName = localStorage.getItem("songName");
 
@@ -90,7 +91,6 @@ fetch(searchUrl, searchOptions)
                 return response.json();
             })
             .then(result => {
-                console.log(result.lyrics.lyrics.body.html)
                 const originalLyrics = result.lyrics.lyrics.body.html; // lyrics generated from genius API
                 const lyricTextBody = document.getElementById("original-lyrics-text")
                 // Removing hrefs for the lyrics to make the lyrics cleaner - hrefs wont redirect anyway
@@ -100,98 +100,40 @@ fetch(searchUrl, searchOptions)
                 // Remove class attributes
                 cleanedLyrics = cleanedLyrics.replace(/ class="[^"]*"/g, ''); // removing classes from lyrics
 
-                lyricTextBody.innerHTML = "<p>Source Language</p>" + cleanedLyrics;
+                lyricTextBody.innerHTML = cleanedLyrics;
+                console.log(cleanedLyrics)
 
+            const translateUrl = 'https://google-translate1.p.rapidapi.com/language/translate/v2';
+            const translateOptions = {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/x-www-form-urlencoded',
+                    'Accept-Encoding': 'application/gzip',
+                    // 'X-RapidAPI-Key': 'c90d154452msha7f11d64980390dp1d5c6fjsn96de4a654446',
+                    'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
+                },
+                body: new URLSearchParams({
+                    q: lyricTextBody.innerHTML,// lyrics from genius API
+                    target: translateLangInput, // target language code we want to change the lyrics to. replace later with user input.
+                    source: sourceLangInput // set source language
+                })
+            };
+
+            fetch(translateUrl, translateOptions)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(result => {
+                    console.log(result)
+                    const translatedLyrics = result.data.translations[0].translatedText;
+                    const translateLyricsTextBody =  document.getElementById("translated-lyrics-text")
+
+                    translateLyricsTextBody.innerHTML = translatedLyrics
+                    
+                    console.log(translatedLyrics); // translated lyrics
+                })
             })
         })
-//                 const detecturl = 'https://google-translate1.p.rapidapi.com/language/translate/v2/detect';  // Detect language call with Translate API
-//                 const detectoptions = {
-//                     method: 'POST',
-//                     headers: {
-//                         'content-type': 'application/x-www-form-urlencoded',
-//                         'Accept-Encoding': 'application/gzip',
-//                         'X-RapidAPI-Key': '6619f90da8msh59c12f6daf73a82p1a280cjsneb6601c06c64',
-//                         'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
-//                     },
-//                     body: new URLSearchParams({
-//                         q: originalLyrics // lyrics from genius API
-//                     })
-//                 };
-
-//                 fetch(detecturl, detectoptions)
-//                     .then(response => {
-//                         if (!response.ok) {
-//                             throw new Error(`HTTP error! Status: ${response.status}`);
-//                         }
-//                         return response.json();
-//                     })
-//                     .then(data => {
-//                         console.log(data)
-//                         const language = data.data.detections[0][0].language; // detects the language of the original lyrics
-//                         console.log(language);
-
-//                         const getLanguageUrl = 'https://google-translate1.p.rapidapi.com/language/translate/v2/languages?target=' + language;
-//                         const getLanguageOptions = {
-//                             method: 'GET',
-//                             headers: {
-//                                 'Accept-Encoding': 'application/gzip',
-//                                 'X-RapidAPI-Key': '6619f90da8msh59c12f6daf73a82p1a280cjsneb6601c06c64',
-//                                 'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
-//                             }
-//                         };
-
-//                         fetch(getLanguageUrl, getLanguageOptions)
-//                             .then(response => {
-//                                 if (!response.ok) {
-//                                     throw new Error(`HTTP error! Status: ${response.status}`);
-//                                 }
-//                                 return response.json();
-//                             })
-//                             .then(result => {
-//                                 console.log(result)
-//                                 for (let i = 0; i < result.data.languages.length; i++) { //for loop that iterates through all data languages
-//                                     console.log(result)
-//                                     const availableTranslations = result.data.languages[i].language; 
-//                                     const availableTranslationsEng = result.data.languages[i].name;
-                                    
-//                                     console.log(availableTranslations); // return language codes available to translate from
-//                                     console.log(availableTranslationsEng); // returns available translations in English
-//                                 }
-
-//                                 const translateUrl = 'https://google-translate1.p.rapidapi.com/language/translate/v2';
-//                                 const translateOptions = {
-//                                     method: 'POST',
-//                                     headers: {
-//                                         'content-type': 'application/x-www-form-urlencoded',
-//                                         'Accept-Encoding': 'application/gzip',
-//                                         'X-RapidAPI-Key': '6619f90da8msh59c12f6daf73a82p1a280cjsneb6601c06c64',
-//                                         'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
-//                                     },
-//                                     body: new URLSearchParams({
-//                                         q: originalLyrics, // lyrics from genius API
-//                                         target: "es", // target language code we want to change the lyrics to. replace later with user input.
-//                                         source: language // set source language
-//                                     })
-//                                 };
-
-//                                 fetch(translateUrl, translateOptions)
-//                                     .then(response => {
-//                                         if (!response.ok) {
-//                                             throw new Error(`HTTP error! Status: ${response.status}`);
-//                                         }
-//                                         return response.json();
-//                                     })
-//                                     .then(result => {
-//                                         console.log(result)
-//                                         const translatedLyrics = result.data.translations[0].translatedText;
-//                                         console.log(translatedLyrics); // translated lyrics
-//                                     })
-//                                     .catch(error => console.error('Fetch error: ' + error.message));
-//                             })
-//                             .catch(error => console.error('Fetch error: ' + error.message));
-//                     })
-//                     .catch(error => console.error(error));
-//             })
-//             .catch(error => console.error(error));
-//     })
-//     .catch(error => console.error(error));

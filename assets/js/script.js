@@ -50,15 +50,15 @@ translateDropdown.addEventListener ("change", function () {
     console.log(translateLanguageEng)
 })
 
-translateButton.addEventListener ("click", function(event) {
-    var noTitle = document.getElementById("artist-correct-input")
-    var noSong = document.getElementById("song-correct-input")
-    if(artist.value === ""){
-        noTitle.style.visibility = "visible";
+
+
+translateButton.addEventListener ("click", function() {
+    var sourceLanguage = sourceDropdown.value;
+    var translateLanguage = translateDropdown.value;
+    console.log (sourceLanguage, translateLanguage);
+    if (sourceLanguage !== '' && translateLanguage !== '') {
+    window.location.href = "landingPage.html"; 
     }
-    if(title.value === ""){
-        noSong.style.visibility = "visible"
-    window.location.href = "landingPage.html";
     }
 });
 

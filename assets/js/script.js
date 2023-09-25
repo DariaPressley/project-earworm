@@ -50,8 +50,14 @@ translateDropdown.addEventListener ("change", function () {
     console.log(translateLanguageEng)
 })
 
-translateButton.addEventListener ("click", function(event) {
-    window.location.href = "landingPage.html";
+
+translateButton.addEventListener ("click", function() {
+    var sourceLanguage = sourceDropdown.value;
+    var translateLanguage = translateDropdown.value;
+    console.log (sourceLanguage, translateLanguage);
+    if (sourceLanguage !== '' && translateLanguage !== '') {
+    window.location.href = "landingPage.html"; 
+    }
     }
 )
 

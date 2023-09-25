@@ -1,6 +1,7 @@
 var artistName = localStorage.getItem("artistName");
 var artistText = document.getElementById("artist-card-text")
 
+
 function getArtistName () {
     var artistName = localStorage.getItem("artistName");
     var artistText = document.getElementById("artist-card-text")
@@ -15,14 +16,14 @@ function getSongName () {
 
 function getSourceLang () {
     var sourceLang = localStorage.getItem("sourceLangEng");
-    var sourceLangtext = document.getElementById("language-card-text");
+    var sourceLangtext = document.getElementById("source-language-card-text");
     sourceLangtext.textContent = sourceLang
 
 }
 
 function getTranslateLang () {
     var translateLang = localStorage.getItem("translateLangEng")
-    var translateLangtext = document.getElementById("language-card-text")
+    var translateLangtext = document.getElementById("translated-language-card-text")
     translateLangtext.textContent = translateLang
 }
 
@@ -176,3 +177,4 @@ goBackButton.addEventListener ("click", function() {
 //             .catch(error => console.error(error));
 //     })
 //     .catch(error => console.error(error));
+

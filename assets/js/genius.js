@@ -109,7 +109,7 @@ fetch(searchUrl, searchOptions)
                 headers: {
                     'content-type': 'application/x-www-form-urlencoded',
                     'Accept-Encoding': 'application/gzip',
-                    // 'X-RapidAPI-Key': 'c90d154452msha7f11d64980390dp1d5c6fjsn96de4a654446',
+                    'X-RapidAPI-Key': 'c90d154452msha7f11d64980390dp1d5c6fjsn96de4a654446',
                     'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
                 },
                 body: new URLSearchParams({

@@ -51,9 +51,24 @@ translateDropdown.addEventListener ("change", function () {
 })
 
 translateButton.addEventListener ("click", function() {
-    window.location.href = "landingPage.html";
+    var sourceLanguage = sourceDropdown.value;
+    var translateLanguage = translateDropdown.value;
+    console.log (sourceLanguage, translateLanguage);
+    if (sourceLanguage !== '' && translateLanguage !== '') {
+        window.location.href = "landingPage.html";
+        }
+    var noTitle = document.getElementById("artist-correct-input")
+    var noSong = document.getElementById("song-correct-input")
+    if(artist.value === ""){
+        noTitle.style.visibility = "visible";
+      }
+      if(title.value === ""){
+        noSong.style.visibility = "visible"
+    //   window.location.href = "landingPage.html";
+      }
     }
 )
+
 
 
 var artistName =  document.getElementById("artist-card-text")

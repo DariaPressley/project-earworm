@@ -5,6 +5,11 @@
     background-repeat: no-repeat;
 }
 
+#goBackButton{
+    z-index: 1;
+    }
+
+
 #album-body{
     width: 400%;
     margin-top: -200px;

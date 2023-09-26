@@ -13,6 +13,7 @@ body {
     background-image: url('https://images.unsplash.com/photo-1518672703296-e3022657f7b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2938&q=80');
     background-repeat: no-repeat;
     background-size: 125% 125%;
+    
 
 }
 .container {
@@ -58,6 +59,8 @@ header h2 {
 }
 
 .card {
+    position: relative;
+    left: 100px;
     background:rgba(255, 255, 255, 0.466);
 
 }
@@ -74,4 +77,9 @@ header h2 {
 }
 #artist-correct-input{
     visibility: hidden;
+}
+
+#translateButton {
+    position: relative;
+    left: 100px;
 }

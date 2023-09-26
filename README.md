@@ -31,7 +31,7 @@ The site uses two APIs and client-side storage to store persistent data.
 
 ## Page
 
-https://dariapressley.github.io/earworm
+https://dariapressley.github.io/project-earworm/
 
 ## Credits
 

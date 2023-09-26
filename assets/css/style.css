@@ -15,6 +15,10 @@ body {
     background-size: 125% 125%;
 
 }
+.container {
+    position: relative;
+    left: 120px;
+}
 
 header {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

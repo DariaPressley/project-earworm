@@ -1,6 +1,6 @@
 #album-background{
     padding: 18%;
-    background-image: url(../images/soundtrap-5Wj_tk8_Ens-unsplash.jpg);
+    /* background-image: url(../images/soundtrap-5Wj_tk8_Ens-unsplash.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -57,7 +57,7 @@
 #album-art-overall{
     margin-top: 200px;
     margin-right: 200px;
-    border: solid black;
+    border: none;
     padding: 5px;
     width: 600px;
     height: 600px;
@@ -67,12 +67,17 @@
     height: auto;
     margin-top: -12%;
     padding-left: 50px;
+    position: relative;
+    right: 100px;
+
 }
 
 #translate-2{
     height: auto;
     margin-top: -12%;
     padding-right: 50px;
+    position: relative;
+    right: 90px;
 }
 
 #translate-1-card-body{

@@ -16,10 +16,8 @@ body {
     
 
 }
-.container {
-    position: relative;
-    left: 120px;
-}
+
+
 
 header {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -82,4 +80,28 @@ header h2 {
 #translateButton {
     position: relative;
     left: 100px;
+}
+
+@media only screen and (max-width: 768px){
+    .container {
+        position: relative;
+        left: 70px;
+    }
+
+    header {
+        max-width: 75%;
+        position: relative;
+        left: 100px;
+    }
+}
+
+@media only screen and (max-width: 576px){
+    .container {
+        position: relative;
+        left: 10px;
+    }
+    header {
+        position: relative;
+        left: 45px;
+    }
 }

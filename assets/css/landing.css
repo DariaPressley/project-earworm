@@ -250,3 +250,33 @@
     }
 
 }
+
+@media screen and (max-width: 393px), 
+       screen and (max-height: 852px) {
+        #artist-card-overall {
+            position: relative;
+            top: 100px;
+            left: -18px;
+
+        }
+
+        #song-card-overall{
+            position: relative;
+            top: 100px;
+            left: -18px;
+        }
+    
+        #language-card-overall{
+            position: relative;
+            top: 100px;
+            left: -18px;
+
+        }
+        .card-img {
+            position: relative;
+            top: 100px;
+            left: 175px;
+            max-width: 95%;
+        }
+  
+}

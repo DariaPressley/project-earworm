@@ -105,3 +105,16 @@ header h2 {
         left: 45px;
     }
 }
+
+@media screen and (max-width: 393px), 
+       screen and (max-height: 852px) {
+        .container {
+            position: relative;
+            left: -100px;
+        }
+        #translateButton {
+            position: relative;
+            left: 170px;
+        }
+
+       }
